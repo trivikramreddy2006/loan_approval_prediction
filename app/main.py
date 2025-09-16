@@ -130,9 +130,8 @@ def main():
         st.header("📊 Data Explorer")
 
         # Load dataset
-        df = pd.read_csv(
-            r"D:\DJANGO_COURSE_2.xx (2)\DJANGO_COURSE_2.xx\python_learning\loan_prediction_app\data\loan_approval_dataset.csv"
-        )
+        data_path = os.path.join("data", "loan_approval_dataset.csv")
+        df = pd.read_csv(data_path)
         df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
         st.subheader("Dataset Preview")
