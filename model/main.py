@@ -5,10 +5,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report
 from sklearn.model_selection import train_test_split
 import pickle
+import os
 
-df = pd.read_csv(
-    r"DJANGO_COURSE_2.xx\python_learning\loan_prediction_app\data\loan_approval_dataset.csv"
-)
+data_path = os.path.join("data", "loan_approval_dataset.csv")
+df = pd.read_csv(data_path)
 
 df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 
