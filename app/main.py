@@ -5,8 +5,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pickle
 import time
+import os
 
-with open(r"D:\DJANGO_COURSE_2.XX (2)\DJANGO_COURSE_2.xx\python_learning\loan_prediction_app\model\loan_model.pkl", "rb") as f:
+model_path = os.path.join("model", "loan_model.pkl")
+with open(model_path, "rb") as f:
     saved_data = pickle.load(f)
     model = saved_data["model"]
     encoders = saved_data["encoders"]
